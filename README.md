@@ -2,7 +2,7 @@
 ## react-quick-pinch-zoom
 https://www.npmjs.com/package/react-quick-pinch-zoom
 ### 概要
-ピンチインアウトでのみズームインアウトが可能。
+ピンチインアウトやスクロール動作でズームインアウトが可能。
 
 ## react-zoom-pan-pinch
 https://www.npmjs.com/package/react-zoom-pan-pinch

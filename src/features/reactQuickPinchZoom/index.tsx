@@ -1,10 +1,7 @@
 import { Header } from "../header"
 import React, { useCallback, useRef } from "react"
 import QuickPinchZoom, { make3dTransformValue } from "react-quick-pinch-zoom"
-
-const IMG_URL =
-  "https://user-images.githubusercontent.com/4661784/" +
-  "56037265-88219f00-5d37-11e9-95ef-9cb24be0190e.png"
+import { ImagePath } from "../../utils/imagePath"
 
 type UpdateProps = {
   x: number
@@ -17,7 +14,6 @@ export const ReactQuickPinchZoom = () => {
 
   const onUpdate = useCallback((props: UpdateProps) => {
     const { x, y, scale } = props
-    console.log(x)
     const { current: img } = imgRef
 
     if (img) {
@@ -31,7 +27,7 @@ export const ReactQuickPinchZoom = () => {
     <>
       <Header />
       <QuickPinchZoom onUpdate={onUpdate}>
-        <img alt="" ref={imgRef} src={IMG_URL} />
+        <img alt="" ref={imgRef} src={ImagePath} />
       </QuickPinchZoom>
     </>
   )

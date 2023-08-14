@@ -1,6 +1,6 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
-import { Header } from "../header"
 import { ImagePath } from "../../utils/imagePath"
+import { Header } from "../header"
 
 export const ReactZoomPanPinch = () => {
   return (
@@ -11,9 +11,19 @@ export const ReactZoomPanPinch = () => {
         initialPositionX={200}
         initialPositionY={100}
       >
-        <TransformComponent>
-          <img alt="" src={ImagePath} />
-        </TransformComponent>
+        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+          <>
+            <div className="tools">
+              <button onClick={() => zoomIn()}>+</button>
+              <button onClick={() => zoomOut()}>-</button>
+              <button onClick={() => resetTransform()}>x</button>
+            </div>
+            <TransformComponent>
+              <img src={ImagePath} alt="test" />
+              <div>Example text</div>
+            </TransformComponent>
+          </>
+        )}
       </TransformWrapper>
     </>
   )
